@@ -14,15 +14,15 @@
 
  - 设定Ui线程：
 
-```
-    @UiThread
+```java
+    @UiThread
     public void testUiThread() {
         Log.v("ghy", "uiThread:" + Thread.currentThread().getName());
     }
 ```
 - 设定Ui线程，并延时1s：
 
-```
+```java
     @UiThread(delayTime = 1000)
     public void testUiThread() {
         Log.v("ghy", "uiThread:" + Thread.currentThread().getName());
@@ -31,7 +31,7 @@
 
 - 设定BackGround线程：
 
-```
+```java
     @Background
     public void testBackThread() {
         Log.v("ghy", "backThread:" + Thread.currentThread().getName());
@@ -39,21 +39,21 @@
 ```
 - 观察方法执行时间：
 
-```
+```java
    @MethodWatch // 不使用tag，默认tag为方法名
     private void testMethodTag() {
     }
 ```
 - 观察方法执行时间，使用tag：
 
-```
+```java
    @MethodWatch(tag = "ghy") 
     private void testMethodTag() {
     }
 ```
 - 也可以混合使用：
 
-```
+```java
    @MethodWatch(tag = "ghy") 
    @UiThread(delayTime = 1000)
     private void testMethodTag() {
@@ -67,7 +67,7 @@
 引入方法：
 
  1. 在你的Project的 build.gradle 按下面的操作配置仓库。
- ```
+ ```java
 	allprojects {
 		repositories {
 			...
@@ -84,7 +84,7 @@
 
 	
 
- ```
+ ```java
    apply plugin: 'android-aspectjx' 
    
    dependencies {
